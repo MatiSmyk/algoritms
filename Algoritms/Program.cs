@@ -6,17 +6,29 @@ namespace Algoritms
     {
         static void Main(string[] args)
         {
-            Algoritms algoritms = new Algoritms();
+            Algorithms algorithms = new Algorithms();
 
-            //algoritms.FizzBuzz();
-            //algoritms.Swap(5, 12);
-            //algoritms.Fibonacci(12);
-            //algoritms.Reverse("tekst do odwrócenia");
-            //algoritms.Palindrom("tartak");
-            //algoritms.PalindromV2("anna");
-            algoritms.SumOfNumbers(new int[] { 2, -8, 11, 2, -2, -1 });
+            //algorithms.FizzBuzz();
+            //algorithms.Swap(5, 12);
+            //algorithms.Fibonacci(12);
+            //algorithms.Reverse("tekst do odwrócenia");
+            //algorithms.Palindrom("tartak");
+            //algorithms.PalindromV2("anna");
+            //algorithms.SumOfNumbers(new int[] { 2, -8, 11, 2, -2, -1 });
+
+            //algorithms.MakeSentence(new string[] { "to", "jest", "poprawne", "zdanie" });
+            //algorithms.BubbleSort(new int[] { 3, 7, 1, 2, 9, 4 });
+            //Console.WriteLine(algorithms.Factorial(5));
+            //Console.WriteLine(algorithms.Mult(3, 6));
+            //algorithms.UpperCase("PrzYKłADowE");
+            //algorithms.BMIcalculator(140, 1.81);
+            algorithms.ToBinary(186);
+
+
 
             Console.ReadKey();
         }
     }
 }
+
+
