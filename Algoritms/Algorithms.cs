@@ -122,7 +122,7 @@ namespace Algoritms
                 }
 
             }
-            int[] result = new int[2] { plus, minus };
+            int[] result = new int[] { plus, minus };
             return result;
         }
 
@@ -173,10 +173,11 @@ namespace Algoritms
             {
                 return y;
             }
+
             return y + Mult(x - 1, y);
         }
 
-        public int[] UpperCase(string text)
+        public int[] FindUpperCases(string text)
         {
             int[] temporaryIndexesOfUpperCases = new int[text.Length];
             int j = 0;
@@ -241,7 +242,7 @@ namespace Algoritms
         }
         public void ToBinary(int number)
         {
-            string numberStr = Convert.ToString(number, 2);
+            string numberStr = Convert.ToString(number, 16);
             int zero = 0;
             int one = 0;
             for (int i = 0; i < numberStr.Length; i++)
@@ -257,5 +258,82 @@ namespace Algoritms
             }
             Console.WriteLine($"{number} -> {numberStr}\nliczba 0: {zero}\nliczba 1: {one}");
         }
+        public void GuessNumber()
+        {
+            Random random = new Random();
+            int numberToGuess = random.Next(0, 100);
+            int userNumber;
+            int i = 0;
+            bool isNuberGuessed = false;
+            while (!isNuberGuessed) 
+            {
+                Console.Write("Podaj liczbę od 1 do 100: ");
+                bool checkingTheNumber = int.TryParse(Console.ReadLine(), out userNumber);
+                if (!checkingTheNumber || userNumber < 1 || userNumber > 100)
+                {
+                    Console.WriteLine("Poadaj poprawną liczbę.");
+                }
+                else
+                {
+                    if (userNumber > numberToGuess)
+                    {
+                        Console.WriteLine("Wylosowana liczba jest mniejsza.");
+                    }
+                    else if (userNumber < numberToGuess)
+                    {
+                        Console.WriteLine("Wylosowana liczba jest większa.");
+                    }
+                    else
+                    {
+                        isNuberGuessed = true;
+                    }
+                    i++;
+                }
+            }
+            Console.WriteLine($"Wylosowana liczba to {numberToGuess}, zgadłeś ją za {i} razem");
+        }
+
+        public void NextPrimalNumber()
+        {
+            int userNumber;
+            Console.Write("Podaj liczbę większą niż 1: ");
+            bool checkingTheNumber = int.TryParse(Console.ReadLine(), out userNumber);
+            if (!checkingTheNumber || userNumber < 2)
+            {
+                Console.WriteLine("Poadaj poprawną liczbę.");
+            }
+
+            while (!IsNumberPrimal(userNumber))
+            {
+                userNumber++;
+            }
+            Console.WriteLine(userNumber);
+        }
+        private static bool IsNumberPrimal(int number)
+        {
+            if (number == 1)
+            {
+                return false;
+            }
+            else if(number == 2)
+            {
+                return true;
+            }
+            else if (number % 2 == 0)
+            {
+                return false;
+            }
+            else
+            {
+                for (int i = 3; i <= Math.Sqrt(number); i += 2)
+                {
+                    if (number % i == 0)
+                    {
+                        return false;
+                    }
+                }
+                return true;
+            }
+        } 
     }
 }

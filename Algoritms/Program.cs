@@ -20,10 +20,11 @@ namespace Algoritms
             //algorithms.BubbleSort(new int[] { 3, 7, 1, 2, 9, 4 });
             //Console.WriteLine(algorithms.Factorial(5));
             //Console.WriteLine(algorithms.Mult(3, 6));
-            //algorithms.UpperCase("PrzYKłADowE");
-            //algorithms.BMIcalculator(140, 1.81);
-            algorithms.ToBinary(186);
-
+            //algorithms.FindUpperCase("PrzYKłADowE");
+            //algorithms.BMIcalculator(97, 1.81);
+            //algorithms.ToBinary(186);
+            //algorithms.GuessNumber();
+            algorithms.NextPrimalNumber();
 
 
             Console.ReadKey();
